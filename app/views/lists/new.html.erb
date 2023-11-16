@@ -1,0 +1,13 @@
+<h1>Lists uhu ^^ O_o</h1>
+
+<%= form_with(model: List.new, url: lists_path, method: :post) do |form| %>
+  <div>
+    <%= form.label :name, 'List Name' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.submit 'Create List' %>
+  </div>
+<% end %>
+    <%= link_to 'back home', lists_path %>
