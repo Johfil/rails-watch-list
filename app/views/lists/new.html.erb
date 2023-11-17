@@ -1,13 +1,24 @@
-<h1>Lists uhu ^^ O_o</h1>
-
-<%= form_with(model: List.new, url: lists_path, method: :post) do |form| %>
-  <div>
-    <%= form.label :name, 'List Name' %>
-    <%= form.text_field :name %>
+<div class="container">
+  <div class="bg-dark text-white fs-4 d-flex justify-content-center align-items-center p-3 mb-1">
+    <h1>Super mega secret list</h1>
   </div>
 
-  <div>
-    <%= form.submit 'Create List' %>
+  <div class="bg-dark text-white fs-4 d-flex flex-column align-items-center p-2">
+    <%= form_with(model: List.new, url: lists_path, method: :post) do |form| %>
+      <div class="mb-3">
+      <div class="d-flex justify-content-center">
+        <%= form.label :name, 'List Name' %>
+        </div>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="mb-3">
+        <div class="d-flex justify-content-center">
+          <%= form.submit 'Create List', class: 'btn btn-danger' %>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <%= link_to 'Back home', lists_path, class: 'btn btn-primary' %>
+      </div>
+    <% end %>
   </div>
-<% end %>
-    <%= link_to 'back home', lists_path %>
+</div>

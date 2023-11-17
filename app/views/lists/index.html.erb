@@ -1,18 +1,26 @@
 <div class="container">
-  <div class="bg-dark text-white fs-4 d-flex justify-content-between align-items-center p-3">
+  <div class="bg-dark text-white fs-4 d-flex justify-content-center align-items-center p-3">
     <h1>All Lists</h1>
-    <%= link_to 'New List', new_list_path, class: "btn btn-primary" %>
-  </div>
+            </div>
+      <div class="bg-dark text-white fs-4 d-flex justify-content-center align-items-center p-3">
 
+    <%= link_to 'New List', new_list_path, class: "btn btn-primary" %>
+    </div>
+
+  <div class="bg-dark text-white fs-4 p-4">
   <% @lists.each do |list| %>
     <div class="card">
+    <div class="bg-dark text-white fs-4 p-3">
       <div class="card-body">
         <h5 class="card-title"><%= list.name %></h5>
-
-        <%= link_to 'Show List', list, class: "btn btn-dark" %>
+        <div class="d-flex justify-content-center">
+        <%= link_to 'Show List', list, class: "btn btn-primary " %>
 
         <%= button_to "Delete", list_path(list), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger", form: {action: list_path(list), method: :delete} %>
+        </div>
+      </div>
       </div>
     </div>
   <% end %>
+  </div>
 </div>
